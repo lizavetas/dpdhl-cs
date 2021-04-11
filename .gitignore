@@ -1,0 +1,14 @@
+# ideas files
+*.iml
+.idea
+
+# node_modules
+node_modules/*
+
+# app files
+dist
+build
+coverage
+
+.DS_Store
+yarn.lock
