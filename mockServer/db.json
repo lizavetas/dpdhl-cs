@@ -11,7 +11,7 @@
         "street": "Malerweg 2",
         "city": "Himmelpfort"
       },
-      "deliveryAmount": "5"
+      "deliveryAmount": 8
     },
     {
       "personalNumber": 654321,
@@ -36,7 +36,7 @@
         "street": "Hauptstr. 178a",
         "city": "Himmelpfort"
       },
-      "deliveryAmount": "2"
+      "deliveryAmount": 33
     },
     {
       "id": 4,
