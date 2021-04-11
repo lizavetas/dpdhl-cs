@@ -73,10 +73,17 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.4"
   },
+  "devDependencies": {
+    "@testing-library/react-hooks": "^5.1.1",
+    "jest-mock-extended": "^1.0.13",
+    "json-server": "^0.16.3",
+    "node-sass": "^5.0.0"
+  },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "runMockServer": "node mockServer/mockServer.js"
   },
   "eslintConfig": {
     "extends": [
@@ -146,7 +153,8 @@
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
     ],
-    "resetMocks": true
+    "resetMocks": true,
+    "watchman": false
   },
   "babel": {
     "presets": [

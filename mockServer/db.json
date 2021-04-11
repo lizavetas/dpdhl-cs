@@ -1,0 +1,68 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "personalNumber": 123456,
+      "name": "Hannelore",
+      "surname": "Amsél",
+      "deliveryDevice": "E-Scooter",
+      "address": {
+        "zip": 16798,
+        "street": "Malerweg 2",
+        "city": "Himmelpfort"
+      },
+      "deliveryAmount": "5"
+    },
+    {
+      "personalNumber": 654321,
+      "name": "Horst",
+      "surname": "Hurtzig",
+      "deliveryDevice": "Fahrrad",
+      "address": {
+        "zip": 16798,
+        "street": "Adlerweg 13",
+        "city": "Himmelpfort"
+      },
+      "deliveryAmount": "212"
+    },
+    {
+      "id": 3,
+      "personalNumber": 332148,
+      "name": "Annalena",
+      "surname": "Lang",
+      "deliveryDevice": "Rollwagen",
+      "address": {
+        "zip": 16798,
+        "street": "Hauptstr. 178a",
+        "city": "Himmelpfort"
+      },
+      "deliveryAmount": "2"
+    },
+    {
+      "id": 4,
+      "personalNumber": 987654,
+      "name": "Minh",
+      "surname": "Lee Nhygen",
+      "deliveryDevice": "Fahrrad",
+      "address": {
+        "zip": 16798,
+        "street": "Langestraße 1",
+        "city": "Himmelpfort"
+      },
+      "deliveryAmount": "0"
+    },
+    {
+      "id": 5,
+      "personalNumber": 975361,
+      "name": "Karl",
+      "surname": "Gans",
+      "deliveryDevice": "Caddy",
+      "address": {
+        "zip": 16798,
+        "street": "Breite Str. 3e",
+        "city": "Himmelpfort"
+      },
+      "deliveryAmount": "23"
+    }
+  ]
+}
