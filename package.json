@@ -83,7 +83,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
+    "test": "jest",
     "runMockServer": "node mockServer/mockServer.js"
   },
   "eslintConfig": {
@@ -108,10 +108,12 @@
     "roots": [
       "<rootDir>/src"
     ],
+    "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
+      "src/**/*.{ts,tsx}",
       "!src/**/*.d.ts"
     ],
+    "coverageDirectory": "coverage",
     "setupFiles": [
       "react-app-polyfill/jsdom"
     ],
@@ -119,8 +121,7 @@
       "<rootDir>/src/setupTests.ts"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+      "**/?(*.)+(spec|test).[tj]s?(x)"
     ],
     "testEnvironment": "jsdom",
     "testRunner": "/Users/eshcherb/Documents/dev/private/dpdhl-cs/node_modules/jest-circus/runner.js",
@@ -149,10 +150,6 @@
       "web.jsx",
       "jsx",
       "node"
-    ],
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
     ],
     "resetMocks": true,
     "watchman": false

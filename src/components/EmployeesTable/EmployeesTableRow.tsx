@@ -17,7 +17,6 @@ const EmployeesTableRow: React.FunctionComponent<Employee> = (employee) => {
                            data-testid="deliveryAmount"
                            value={selectedEmployee.deliveryAmount}
                            onChange={(e) => {
-                               console.log('update')
                                updateEmployee(e)
                            }}
                            disabled={!selectedEmployee.isInProgress}

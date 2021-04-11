@@ -24,9 +24,11 @@ describe('EmployeesTableRow component', () => {
         deliveryAmount: 12
     });
 
+    const inputValue = '22';
+
     const event = mock<React.ChangeEvent<HTMLInputElement>>({
         target: {
-            value: '22'
+            value: inputValue
         }
     });
 
@@ -56,5 +58,60 @@ describe('EmployeesTableRow component', () => {
         expect(screen.getByTestId('saveEmployeeBtn')).toBeInTheDocument();
         expect(screen.getByTestId('saveEmployeeBtn')).toBeDisabled();
         expect(screen.queryByTestId('error')).not.toBeInTheDocument();
+    });
+
+    it('should update employee successfully', async () => {
+        const response = mock<AxiosResponse>();
+        mockedAxios.patch.mockResolvedValue(response);
+
+        render(
+            <table>
+                <tbody>
+                <EmployeesTableRow {...employeeMock}/>
+                </tbody>
+            </table>
+        );
+
+        fireEvent.click(screen.getByTestId('editEmployeeBtn'));
+
+        expect(screen.getByTestId('saveEmployeeBtn')).not.toBeDisabled();
+        expect(screen.getByTestId('deliveryAmount')).not.toBeDisabled();
+
+        fireEvent.change(screen.getByTestId('deliveryAmount'), event);
+        await act(async () => {
+            await fireEvent.click(screen.getByTestId('saveEmployeeBtn'));
+        });
+
+        expect(screen.getByTestId('deliveryAmount')).toHaveValue(inputValue)
+        expect(screen.getByTestId('deliveryAmount')).toBeDisabled();
+        expect(screen.getByTestId('saveEmployeeBtn')).toBeDisabled();
+    });
+
+    it('should try to update employee, fail and render error', async () => {
+        const error = mock<AxiosError>();
+        mockedAxios.patch.mockRejectedValue(error);
+
+        render(
+            <table>
+                <tbody>
+                <EmployeesTableRow {...employeeMock}/>
+                </tbody>
+            </table>
+        );
+
+        fireEvent.click(screen.getByTestId('editEmployeeBtn'));
+
+        expect(screen.getByTestId('saveEmployeeBtn')).not.toBeDisabled();
+        expect(screen.getByTestId('deliveryAmount')).not.toBeDisabled();
+
+        fireEvent.change(screen.getByTestId('deliveryAmount'), event);
+        await act(async () => {
+            await fireEvent.click(screen.getByTestId('saveEmployeeBtn'));
+        });
+
+        expect(screen.getByTestId('deliveryAmount')).toHaveValue(employeeMock.deliveryAmount.toString())
+        expect(screen.getByTestId('deliveryAmount')).toBeDisabled();
+        expect(screen.getByTestId('saveEmployeeBtn')).toBeDisabled();
+        expect(screen.getByTestId('error')).toBeInTheDocument();
     });
 });
