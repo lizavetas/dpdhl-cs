@@ -17,7 +17,7 @@ function useEmployee(employee: Employee): UseEmployee {
         API_URLS.EMPLOYEE_URL(selectedEmployee.id),
         `Ein unerwarteter Fehler ist aufgetreten. Die Änderungen konnten nicht gespeichert werden.`
     );
-    const [currentDeliveryAmount] = useState(selectedEmployee.deliveryAmount);
+    const currentDeliveryAmount = employee.deliveryAmount;
 
     function isNumber(value: string) {
         const reg = /^\d+$/;

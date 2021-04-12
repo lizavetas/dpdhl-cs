@@ -22,14 +22,14 @@ table {
   }
 
   td {
-    padding: .625em;
+    padding: 14px;
     text-align: center;
   }
 
   tr {
-    background-color: #f8f8f8;
+    background: $lightGrey;
     border: 1px solid #dddddd;
-    padding: .35em;
+    padding: 6px;
 
     &:nth-child(odd) {
       background: $grey;
@@ -40,35 +40,31 @@ table {
 @media screen and (max-width: 900px) {
   table {
     border: 0;
-  }
 
-  table caption {
-    //font-size: 1.3em;
-  }
+    thead {
+      display: none;
+    }
 
-  table thead {
-    display: none;
-  }
+    tr {
+      display: block;
+      margin-bottom: 14px;
+    }
 
-  table tr {
-    display: block;
-    margin-bottom: .625em;
-  }
+    td {
+      border-bottom: 1px solid #dddddd;
+      display: block;
+      text-align: right;
+    }
 
-  table td {
-    border-bottom: 1px solid #dddddd;
-    display: block;
-    text-align: right;
-  }
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
 
-  table td::before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  table td:last-child {
-    border-bottom: 0;
+    td:last-child {
+      border-bottom: 0;
+    }
   }
 }

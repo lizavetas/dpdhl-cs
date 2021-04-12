@@ -7,10 +7,18 @@ const EmployeesTableRow: React.FunctionComponent<Employee> = (employee) => {
 
     return (
         <tr>
-            <td data-label="Name" data-testid="name">{selectedEmployee.name} {selectedEmployee.surname}</td>
-            <td data-label="Anschrift" data-testid="address">{selectedEmployee.address.street}<br/> {employee.address.zip} {employee.address.city}</td>
-            <td data-label="Personalnummer" data-testid="personalNumber">{selectedEmployee.personalNumber}</td>
-            <td data-label="Zustellmittel" data-testid="deliveryDevice">{selectedEmployee.deliveryDevice}</td>
+            <td data-label="Name" data-testid="name">
+                {selectedEmployee.name} {selectedEmployee.surname}
+            </td>
+            <td data-label="Anschrift" data-testid="address">
+                {selectedEmployee.address.street}<br/> {employee.address.zip} {employee.address.city}
+            </td>
+            <td data-label="Personalnummer" data-testid="personalNumber">
+                {selectedEmployee.personalNumber}
+            </td>
+            <td data-label="Zustellmittel" data-testid="deliveryDevice">
+                {selectedEmployee.deliveryDevice}
+            </td>
             <td data-label="Sendungsmenge">
                 <form>
                     <input type="text"
