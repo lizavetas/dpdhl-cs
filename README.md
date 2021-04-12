@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. `yarn runMockServer` 
 2. `yarn start`
 
+The second entry in the table (Horst Hurtzig) will throw an error if you try to save the updated amount.
+
 ## Available Scripts
 
 In the project directory, you can run:
